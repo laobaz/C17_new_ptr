@@ -1,7 +1,10 @@
+#ifndef CAT_H
+#define CAT_H
 #include<iostream>
 #include<memory>
 using namespace std;
 #include<string>
+
 
 
 class Cat
@@ -16,6 +19,11 @@ public:
     void eat();
     ~Cat();
     string names = "cat";
+    std::shared_ptr<Cat> cat_friend;
+    std::weak_ptr<Cat> cat_weak;//使用weak_ptr解决循环引用问题
+    void set_friend(std::shared_ptr<Cat> cat);
+    void set_weak(std::weak_ptr<Cat> cat);
 };
 
+#endif
 

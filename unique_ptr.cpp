@@ -1,5 +1,5 @@
-#include"cat.h"
-
+#include"cat.cpp"//vscode不支持自动链接，需要手动链接
+//#include"cat.cpp"
 // unique_ptr 是一个独占所有权的智能指针，
 // 它禁止拷贝和赋值操作，从而保证了资源的独占性。
 // unique_ptr 通过移动语义std::move()来转移所有权，从而避免了资源的拷贝和传递。
@@ -18,6 +18,7 @@ void do_with_cat_ref(const unique_ptr<Cat> cat)//值传递
     cat->speak();
     //cat.reset();
     //自动释放了资源
+
 }
 int main()
 {
@@ -31,7 +32,7 @@ int main()
     // new cat返回一个指向Cat对象的指针
 
     // 推荐
-    unique_ptr<Cat> cat1 = make_unique<Cat>(new Cat("Tom"));
+    //unique_ptr<Cat> cat1 = make_unique<Cat>(new Cat("Tom"));
     unique_ptr<Cat> cat1 = make_unique<Cat>("Tom");
     // 创建一个unique_ptr对象,不需要分配内存
     // make_unique返回一个unique_ptr对象

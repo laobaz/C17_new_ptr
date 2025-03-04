@@ -1,6 +1,7 @@
 #include"cat.h"
 
-int main(){
+
+int main() {
     shared_ptr<int> p1(new int(10));
     shared_ptr<int> p2 = p1;
     shared_ptr<int> p3 =make_shared<int>(20);
@@ -24,12 +25,6 @@ int main(){
 
 
     
-
-
-
-
-
-
 
     return 0;
 
